@@ -29,7 +29,6 @@ h1 {
 /*            Animation          */
 /* ============================= */
 #magic-span {
-	position: relative;
 	display: inline-block;
 	cursor: pointer;
 	vertical-align: middle;

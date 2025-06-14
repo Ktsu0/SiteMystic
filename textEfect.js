@@ -3,38 +3,52 @@ const letter = span.querySelector('.letter');
 const icon = span.querySelector('.icon-img');
 
 export function startEffect() {
-    // Fase 1: Letra normal (4s)
-    setTimeout(() => {
-        // Fase 2: Aplica blur (1s)
-        letter.classList.add('blurred');
-        
-        setTimeout(() => {
-            // Fase 3: Esconde letra (sem transição)
-            letter.style.transition = 'none'; // Remove transição momentaneamente
-            letter.classList.add('hidden');
-            
-            // Restaura transição após mudança
-            setTimeout(() => {
-                letter.style.transition = 'filter 1s ease-in-out, opacity 1s ease-in-out';
-                
-                // Fase 4: Mostra ícone (6s)
-                icon.classList.add('visible');
-                
-                setTimeout(() => {
-                    // Fase 5: Esconde ícone
-                    icon.classList.remove('visible');
-                    
-                    // Fase 6: Mostra letra (sem blur)
-                    letter.classList.remove('hidden');
-                    letter.classList.remove('blurred');
-                    
-                    // Reinicia após ciclo completo
-                    setTimeout(startEffect, 4000);
-                }, 6000);
-            }, 10); // Pequeno delay para garantir renderização
-        }, 1000);
-    }, 4000);
+	// Garante que o Y começa normal e o span sem position
+	span.style.position = 'static';
+
+	// ⏳ Tempo com o Y normal (4s)
+	setTimeout(() => {
+		// Ativa position relative para posicionar o ícone depois
+		span.style.position = 'relative';
+
+		// 🔮 Aplica blur (1s)
+		letter.classList.add('blurred');
+
+		setTimeout(() => {
+			// 🔕 Esconde o Y (0.5s)
+			letter.classList.add('hidden');
+
+			setTimeout(() => {
+				// 🎩 Mostra o ícone (6s)
+				icon.classList.add('visible');
+
+				setTimeout(() => {
+					// ❌ Esconde o ícone
+					icon.classList.remove('visible');
+
+					// 🔧 Remove blur
+					letter.classList.remove('blurred');
+
+					// 🔄 Volta o span a não ter position
+					span.style.position = 'static';
+
+					setTimeout(() => {
+						// 🔁 Volta o Y visível
+						letter.classList.remove('hidden');
+
+						// 🔂 Reinicia ciclo
+						startEffect();
+
+					}, 500); // ⬅️ Espera o blur sair
+
+				}, 6000); // ⬅️ Ícone visível por 6s
+
+			}, 500); // ⬅️ Espera após esconder letra
+
+		}, 1000); // ⬅️ Tempo do blur
+
+	}, 4000); // ⬅️ Tempo normal com a letra visível
 }
 
-// Inicia com delay para carregamento da página
+// ⏱️ Inicia após 1 segundo
 setTimeout(startEffect, 1000);
