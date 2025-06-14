@@ -1,0 +1,71 @@
+/* ============================= */
+/*            HEADER            */
+/* ============================= */
+header {
+	text-align: center;
+	margin-bottom: 3rem;
+	position: relative;
+	z-index: 2;
+}
+
+h1 {
+	font-family: "Cinzel", serif;
+	font-size: 3rem;
+	margin-bottom: 0.5rem;
+	background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	text-shadow: 0 0 10px rgba(153, 105, 255, 0.3);
+}
+
+.subtitle {
+	font-size: 1.2rem;
+	opacity: 0.8;
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+/* ============================= */
+/*            Animation          */
+/* ============================= */
+#magic-span {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	vertical-align: middle;
+}
+
+#magic-span .letter {
+	opacity: 1;
+	display: inline-block;
+	transition: filter 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+/* Aplica blur e opacidade */
+#magic-span .letter.blurred {
+	opacity: 0.5;
+}
+
+/* Esconde completamente */
+#magic-span .letter.hidden {
+	opacity: 0;
+}
+
+.icon-img {
+	filter: brightness(0) saturate(100%) invert(20%) sepia(80%) saturate(800%) hue-rotate(230deg) brightness(1.2) contrast(1.1);
+	opacity: 0;
+	transition: all 2s ease-in-out;
+	width: 1.2em;
+	height: 1.2em;
+	position: absolute;
+	top: 35%;
+	left: 51%;
+	transform: translate(-50%, -50%);
+	pointer-events: none;
+	z-index: -1;
+}
+
+.icon-img.visible {
+	opacity: 1;
+	filter: brightness(0) saturate(100%) invert(20%) sepia(80%) saturate(800%) hue-rotate(230deg) brightness(1.2) contrast(1.1);
+}

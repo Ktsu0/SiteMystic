@@ -1,0 +1,21 @@
+/* ============================= */
+/*           BOTÃO              */
+/* ============================= */
+button {
+	height: 10vh;
+	background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+	color: white;
+	border: none;
+	padding: 0.8rem 2rem;
+	font-family: "Cinzel", serif;
+	font-size: 1rem;
+	border-radius: 50px;
+	cursor: pointer;
+	transition: all 0.3s;
+	box-shadow: 0 5px 15px rgba(153, 105, 255, 0.4);
+}
+
+button:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 8px 20px rgba(153, 105, 255, 0.6);
+}

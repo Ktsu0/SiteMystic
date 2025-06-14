@@ -1,0 +1,153 @@
+/* Verso da carta */
+.card-back {
+	background: var(--card-back);
+	position: relative;
+	overflow: hidden;
+}
+
+/* ============================= */
+/*   ESTADO DA CARTA VIRADA     */
+/* ============================= */
+.card.flipped {
+	transform: rotateY(180deg);
+	pointer-events: none;
+}
+
+/* ============================= */
+/*     DETALHES VISUAIS DO VERSO*/
+/* ============================= */
+.card-back::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 80px;
+	height: 80px;
+	transform: translate(-50%, -50%);
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 0 L60 40 L100 50 L60 60 L50 100 L40 60 L0 50 L40 40 Z' fill='rgba(255,255,255,0.5)'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	opacity: 0.7;
+	z-index: 2;
+	pointer-events: none;
+	transition: transform 1s ease-in-out, filter 1s ease-in-out;
+}
+
+/* ✨ Efeito no hover da carta */
+.card-back:hover::before {
+	transform: translate(-50%, -50%) rotate(360deg) scale(1.1);
+	filter: drop-shadow(0 0 10px #9969ff) drop-shadow(0 0 20px #ff69a1);
+}
+
+.card-back::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 140px;
+	height: 140px;
+	transform: translate(-50%, -50%) rotate(0deg);
+	clip-path: polygon(100% 50%, 77.72% 61.48%, 85.36% 85.36%, 61.48% 77.72%,
+			50% 100%, 38.52% 77.72%, 14.64% 85.36%, 22.28% 61.48%, 0% 50%, 22.28% 38.52%,
+			14.64% 14.64%, 38.52% 22.28%, 50% 0%, 61.48% 22.28%, 85.36% 14.64%, 77.72% 38.52%);
+	border-radius: 50%;
+	box-shadow:
+		0 0 40px rgba(153, 105, 255, 0.6),
+		0 0 60px rgba(255, 105, 161, 0.4),
+		0 0 80px rgba(153, 105, 255, 0.3);
+	animation: pulseAura 30s ease-in-out infinite;
+	z-index: 9;
+	pointer-events: none;
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+@keyframes pulseAura {
+	0% {
+		transform: translate(-50%, -50%) scale(0.3) rotate(0deg);
+		opacity: 0.2;
+
+	}
+
+	30% {
+		transform: translate(-50%, -50%) scale(1)rotate(-45deg);
+		opacity: 0.6;
+	}
+
+	50% {
+		transform: translate(-50%, -50%) scale(1.2) rotate(-90deg);
+		opacity: 1;
+	}
+
+	100% {
+		transform: translate(-50%, -50%) scale(2.2) rotate(-135deg);
+		opacity: 0;
+	}
+}
+
+/*Smoke*/
+.smoke-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	clip-path: inset(0 round 15px);
+	overflow: hidden;
+	pointer-events: none;
+	box-sizing: border-box;
+	z-index: 1;
+}
+
+/* ============================= */
+/*      ANIMAÇÃO DE BRILHO      */
+/* ============================= */
+.magical-sparkle {
+	position: absolute;
+	width: 5px;
+	height: 5px;
+	background: white;
+	border-radius: 50%;
+	pointer-events: none;
+	z-index: 100;
+	animation: sparkle 1s forwards;
+}
+
+@keyframes sparkle {
+	0% {
+		transform: scale(0) rotate(0deg);
+		opacity: 1;
+	}
+
+	100% {
+		transform: scale(1.5) rotate(90deg);
+		opacity: 0;
+	}
+}
+
+.mystic-glow {
+	background: linear-gradient(270deg, #ff00cc, #3333ff, #00ffee, #ff00cc);
+	background-size: 600% 600%;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: glowAnimation 2s ease infinite;
+	text-shadow:
+		0 0 5px rgba(255, 255, 255, 0.6),
+		0 0 10px rgba(255, 255, 255, 0.5),
+		0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+@keyframes glowAnimation {
+	0% {
+		background-position: 0% 50%;
+	}
+
+	50% {
+		background-position: 100% 50%;
+	}
+
+	100% {
+		background-position: 0% 50%;
+	}
+}

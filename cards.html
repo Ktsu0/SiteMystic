@@ -1,61 +1,72 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 
-<head>
-	<meta charset="UTF-8">
-	<!-- Define que o site será exibido corretamente em dispositivos móveis -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<head>
+		<meta charset="UTF-8">
+		<!-- Define que o site será exibido corretamente em dispositivos móveis -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<title>Mystical Fortune Cards</title>
-    <link rel="icon" href="https://i.pinimg.com/736x/89/0f/d8/890fd8a3efa4440c8396597af90a1bad.jpg" type="image/png">
+		<title>Mystical Fortune Cards</title>
+		<link rel="icon"
+			href="https://i.pinimg.com/736x/89/0f/d8/890fd8a3efa4440c8396597af90a1bad.jpg"
+			type="image/png">
 
-	<!-- Importa o arquivo de estilos personalizado -->
-	<link rel="stylesheet" href="cards.css">
+		<!-- Importa o arquivo de estilos personalizado -->
+		<link rel="stylesheet" href="cards.css">
 
-	<!-- Conexões antecipadas com o Google Fonts (melhora o desempenho ao carregar fontes) -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<!-- Conexões antecipadas com o Google Fonts (melhora o desempenho ao carregar fontes) -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-	<!-- Importa as fontes utilizadas no visual do site -->
-	<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
-</head>
+		<!-- Importa as fontes utilizadas no visual do site -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Cormorant+Garamond:wght@300;400;600&display=swap"
+			rel="stylesheet">
+	</head>
 
-<body>
-	<!-- Container geral do conteúdo da página -->
-	<div class="container">
+	<body>
+		<!-- Container geral do conteúdo da página -->
+		<div class="container">
+			<!-- Canvas onde partículas animadas serão desenhadas via JavaScript -->
+			<canvas id="particle-canvas"></canvas>
+			<!-- Cabeçalho da página -->
+			<header>
+				<h1>
+					M
+					<div id="magic-span">
+						<span class="letter">y</span>
+						<img
+							src="https://static.thenounproject.com/png/witch-icon-7379544-512.png"
+							class="icon-img" />
+					</div>
+					stical Fortune Cards
+				</h1>
+				<p class="subtitle">Escolha uma carta para revelar seu destino</p>
+			</header>
 
-		<!-- Canvas onde partículas animadas serão desenhadas via JavaScript -->
-		<canvas id="particle-canvas"></canvas>
-
-		<!-- Cabeçalho da página -->
-		<header>
-			<h1>M<span>y</span>stical <span>F</span>ortune Car<span>d</span>s</h1>
-			<p class="subtitle">Escolha uma carta para revelar seu destino</p>
-		</header>
-
-		<!-- Área onde as cartas vão aparecer -->
-		<div class="card-table">
-			<div class="cards-container" id="cards-container">
-				<!-- As cartas serão geradas dinamicamente pelo JavaScript -->
+			<!-- Área onde as cartas vão aparecer -->
+			<div class="card-table">
+				<div class="cards-container" id="cards-container">
+					<!-- As cartas serão geradas dinamicamente pelo JavaScript -->
+				</div>
 			</div>
-		</div>
-		<!-- Caixa que exibe a mensagem da sorte após clicar em uma carta -->
-		<div class="message-container" id="message-container">
-			<div class="message-card">
-				<div class="message-title" id="message-title">Sua Sorte</div>
-				<div class="message-text" id="message-text"></div>
-				<button id="reshuffle-btn">Embaralhar Novamente</button>
+			<!-- Caixa que exibe a mensagem da sorte após clicar em uma carta -->
+			<div class="message-container" id="message-container">
+				<div class="message-card">
+					<div class="message-title" id="message-title">Sua Sorte</div>
+					<div class="message-text" id="message-text"></div>
+					<button id="reshuffle-btn">Embaralhar Novamente</button>
+				</div>
 			</div>
+			<!-- Rodapé com possíveis ícones ou enfeites -->
+			<footer>
+				<i></i>
+				<i></i>
+				<i></i>
+			</footer>
 		</div>
-		<!-- Rodapé com possíveis ícones ou enfeites -->
-		<footer>
-			<i></i>
-            <i></i>
-            <i></i>
-		</footer>
-	</div>
-        <script type="module" src="cards.js"></script>
+		<script type="module" src="cards.js"></script>
 
-</body>
+	</body>
 
 </html>

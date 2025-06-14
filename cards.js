@@ -1,5 +1,7 @@
-import * as THREE from 'https://unpkg.com/three@0.134.0/build/three.module.js';
 import { createSmokeEffect } from './smoke.js';
+import { startEffect } from './textEfect.js';
+
+
 
 class MysticalCards {
 	constructor() {
@@ -265,4 +267,5 @@ class MysticalCards {
 // Inicializa quando a janela carregar
 window.addEventListener("load", () => {
 	new MysticalCards();
+	startEffect();
 });

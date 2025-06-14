@@ -1,0 +1,9 @@
+/* ============================= */
+/*            RODAPÉ            */
+/* ============================= */
+footer {
+	text-align: center;
+	margin-top: 3rem;
+	opacity: 0.5;
+	font-size: 0.9rem;
+}

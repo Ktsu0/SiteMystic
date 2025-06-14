@@ -1,0 +1,38 @@
+/* ============================= */
+/*         ÁREA DAS CARTAS      */
+/* ============================= */
+.card-table {
+	perspective: 1000px;
+	margin-bottom: 2rem;
+	min-height: 400px;
+	z-index: 2;
+	position: relative;
+}
+
+.cards-container {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 1.5rem;
+	min-height: 350px;
+	padding: 1rem;
+}
+
+/* ============================= */
+/*         CARTA (GERAL)        */
+/* ============================= */
+.card {
+	width: 160px;
+	height: 280px;
+	position: relative;
+	transform-style: preserve-3d;
+	transition: transform 1s, filter 0.5s;
+	cursor: pointer;
+	filter: brightness(0.9);
+}
+
+.card:hover {
+	filter: brightness(1.2) drop-shadow(0 0 15px rgba(153, 105, 255, 0.6));
+	transform: translateY(-15px) rotateY(10deg);
+}
+
