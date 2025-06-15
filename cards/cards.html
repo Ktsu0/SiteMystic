@@ -13,6 +13,11 @@
 
 		<!-- Importa o arquivo de estilos personalizado -->
 		<link rel="stylesheet" href="cards.css">
+		<!-- JS Documentos importados -->
+		<script type="module" src="./../footer.js" defer></script>
+
+		<!--API Font Aweson-->
+        <script src="https://kit.fontawesome.com/8facf198d8.js" crossorigin="anonymous"></script>
 
 		<!-- Conexões antecipadas com o Google Fonts (melhora o desempenho ao carregar fontes) -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,25 +30,18 @@
 	</head>
 
 	<body>
-		<!-- Container geral do conteúdo da página -->
-		<div class="container">
-			<!-- Canvas onde partículas animadas serão desenhadas via JavaScript -->
-			<canvas id="particle-canvas"></canvas>
-			<!-- Cabeçalho da página -->
-			<header>
-				<h1>
-					M
-					<div id="magic-span">
-						<span class="letter">y</span>
-						<img
-							src="https://static.thenounproject.com/png/witch-icon-7379544-512.png"
-							class="icon-img" />
-					</div>
-					stical Fortune Cards
-				</h1>
-				<p class="subtitle">Escolha uma carta para revelar seu destino</p>
-			</header>
-
+		<!-- Canvas onde partículas animadas serão desenhadas via JavaScript -->
+		<canvas id="particle-canvas"></canvas>
+		<!-- Cabeçalho da página -->
+		<header>
+			<h1>
+				M<div class="mistic">
+					<span id="magic-span"></span>
+				</div>stical Fortune Cards
+			</h1>
+			<p class="subtitle">Escolha uma carta para revelar seu destino</p>
+		</header>
+		<main>
 			<!-- Área onde as cartas vão aparecer -->
 			<div class="card-table">
 				<div class="cards-container" id="cards-container">
@@ -55,16 +53,13 @@
 				<div class="message-card">
 					<div class="message-title" id="message-title">Sua Sorte</div>
 					<div class="message-text" id="message-text"></div>
-					<button id="reshuffle-btn">Embaralhar Novamente</button>
+					<button class="btn" id="reshuffle-btn">Embaralhar Novamente</button>
 				</div>
 			</div>
-			<!-- Rodapé com possíveis ícones ou enfeites -->
-			<footer>
-				<i></i>
-				<i></i>
-				<i></i>
-			</footer>
-		</div>
+		</main>
+
+		<!-- Rodapé com possíveis ícones ou enfeites -->
+		<footer id="footer"></footer>
 		<script type="module" src="cards.js"></script>
 
 	</body>

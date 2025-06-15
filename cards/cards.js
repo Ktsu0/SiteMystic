@@ -1,7 +1,4 @@
 import { createSmokeEffect } from './smoke.js';
-import { startEffect } from './textEfect.js';
-
-
 
 class MysticalCards {
 	constructor() {
@@ -19,7 +16,6 @@ class MysticalCards {
 	{symbol: "✨",title: "The Star",description: "Esperança e inspiração",fortune: "Uma nova oportunidade trará alegria inesperada para a sua vida. Confie na sua intuição para te guiar."},
 	{symbol: "🌙",title: "The Moon",description: "Intuição e mistério",fortune: "Verdades ocultas serão reveladas. Preste atenção aos seus sonhos, pois eles contêm mensagens importantes."},
 	{symbol: "☀️",title: "The Sun",description: "Sucesso e positividade",fortune: "Um período de crescimento e felicidade se aproxima. Seus esforços serão recompensados de forma magnífica."},
-	{symbol: "⚡",title: "The Tower",description: "Mudança súbita",fortune: "Prepare-se para uma revelação surpreendente que mudará sua perspectiva. Abrace a transformação."},
 	{symbol: "🔮",title: "The Magician",description: "Manifestação e poder",fortune: "Você possui todas as ferramentas necessárias para o sucesso. Seus poderes criativos estão no auge — use-os com sabedoria."},
 	{symbol: "🌊",title: "The Ocean",description: "Emoções e intuição",fortune: "Confie no vai e vem das suas emoções. Uma conexão profunda espera por você se abrir seu coração."}
 ];
@@ -267,5 +263,4 @@ class MysticalCards {
 // Inicializa quando a janela carregar
 window.addEventListener("load", () => {
 	new MysticalCards();
-	startEffect();
 });
