@@ -1,2 +1,236 @@
-@import url(./cards/cards.css);
-@import url(./footer.css);
+/* ============================= */
+/*          VARIÁVEIS           */
+/* ============================= */
+:root {
+  --white: white;
+  --primary-color: #d3a4c6;
+  --secondary-color: #6a007b;
+}
+
+/* ============================= */
+/*         RESET GLOBAL         */
+/* ============================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body {
+  background: var(--primary-color);
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ============================= */
+/*   MENU SUSPENSO (CANTO DIR)  */
+/* ============================= */
+#menu_suspenso {
+  position: fixed;
+  top: 3vh;
+  right: 0vw;
+  width: 7vh;
+  height: auto;
+  background-color: var(--secondary-color);
+  color: var(--white);
+  border-radius: 5vh 0 0 5vh;
+  padding: 1vh;
+  transition: width 1s ease-in-out;
+  overflow: visible;
+  z-index: 999;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* ============================= */
+/*          ÍCONE MENU          */
+/* ============================= */
+#menu_icon {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  margin-left: 0.5vh;
+  width: 5vh;
+  height: 5vh;
+}
+
+/* ============================= */
+/*   ESTILO QUANDO EXPANDIDO    */
+/* ============================= */
+#menu_suspenso.expandido {
+  width: 20vw;
+  border-radius: 5vh 0 0 5vh;
+}
+
+#menu_suspenso.expandido #mensagem_agendar {
+  opacity: 1;
+}
+
+/* ============================= */
+/*  TEXTO: "Quer agendar...?"   */
+/* ============================= */
+#mensagem_agendar {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 4vh;
+  white-space: nowrap;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  font-size: 2vh;
+}
+
+/* ============================= */
+/*       CAIXA DE LOGIN         */
+/* ============================= */
+#login_box {
+  position: absolute;
+  top: -100%;
+  right: -20%;
+  width: 15vw;
+  background-color: var(--secondary-color);
+  border-radius: 1.5vh;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.5s ease-in-out;
+  z-index: 1000;
+  box-shadow: 0 0.5vh 2vh rgba(0, 0, 0, 0.4);
+}
+
+/* Caixa de login visível */
+#login_box.visivel {
+  opacity: 1;
+  height: 30vh; /* Ajuste conforme necessário */
+  padding: 2vh 1vh;
+  cursor: auto;
+}
+
+/* Título do login */
+#login_box p {
+  font-size: 1.6vh;
+  margin-bottom: 1vh;
+  text-align: center;
+}
+
+/* ============================= */
+/*        INPUTS (LOGIN)        */
+/* ============================= */
+.input{
+  width: 80%;
+  padding: 1vh;
+  margin: 1vh;
+  border-radius: 1vh;
+  border: none;
+  outline: none;
+  font-size: 1.5vh;
+}
+
+/*Input Senha*/
+.senha-container {
+  position: relative;
+  width: 100%;
+}
+/* Input da senha com espaço para o ícone */
+.password{
+    margin-left:3vh;
+}
+
+/* Ícone do olho (dentro do input) */
+.senha-container i {
+  position: absolute;
+  top: 52%;
+  right: 4vh;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: black;
+  font-size: 2vh;
+}
+
+
+/* ============================= */
+/*   BOTÃO "ENTRAR" (LOGIN)     */
+/* ============================= */
+.botoes_login {
+  width: 80%;
+  height: 20%;
+  text-align: center;
+  margin: 3vh 0 2vh 0;
+}
+
+.botoes_login button {
+  width: 100%;
+  height: 100%;
+  padding: 1vh 3vw;
+  background-color: #a76ebf;
+  border: none;
+  color: var(--white);
+  border-radius: 1vh;
+  cursor: pointer;
+  font-size: 1.5vh;
+}
+
+.botoes_login button:hover {
+  transform: scale(1.05);
+  color: rgba(230, 228, 228, 0.589);
+  background-color: #a76ebf65;
+}
+
+/* ============================= */
+/*     LINKS: Cadastro / Senha  */
+/* ============================= */
+.links {
+  width: 100%;
+  font-size: 1.5vh;
+  color: var(--white);
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  margin: 1vh;
+}
+
+.link{
+    color: var(--white);
+    text-decoration: underline;
+    padding: 1vh;
+    text-decoration: none;
+}
+.link:hover{
+    transform: scale(1.05);
+}
+
+
+/* ============================= */
+/*         MEDIA QUERIES        */
+/* ============================= */
+@media (max-width: 768px) {
+  #login_box {
+    right: 5%;
+    width: 90vw;
+  }
+
+  .senha-container,
+  #login_box input,
+  .botoes_login {
+    width: 90%;
+  }
+
+  .botoes_login button {
+    font-size: 2vh;
+  }
+
+  #mensagem_agendar {
+    font-size: 2.2vh;
+  }
+}

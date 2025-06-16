@@ -1,22 +1,40 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/index.css">
-        <!--API Font Aweson-->
-        <script src="https://kit.fontawesome.com/8facf198d8.js" crossorigin="anonymous"></script>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Menu Suspenso</title>
+  <link rel="stylesheet" href="index.css">
 
-        <script type="module" src="./footer.js" defer></script>
-        <title>Mystical</title>
-    </head>
-    <body>
-        <header>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-        </header>
-        <main>
+  <script src="btns.js"></script>
+</head>
+<body>
 
-        </main>
-        <div id="footer-container"></div>
-    </body>
+  <!-- Menu Suspenso -->
+  <div id="menu_suspenso">
+    <div id="menu_icon" onclick="toggleMenu()">
+        <img class="icon" src="./../assets/tarot.png">
+    </div>
+    <div id="mensagem_agendar" onclick="abrirLogin()">
+        Quer agendar uma consulta?
+        <div id="login_box">
+            <p class="textConfig">FAÇA SEU LOGIN OU CADASTRE-SE</p>
+            <input class="input" type="email" placeholder="E-mail">
+            <div class="senha-container">
+                <input class="input password" type="password" id="senha_input" placeholder="Senha">
+                <i class="fa-solid fa-eye" id="toggle_senha" onclick="alternarSenha()"></i>
+            </div>
+            <div class="botoes_login">
+                 <button id="btn_entrar">ENTRAR</button>
+            </div>
+            <div class="links">
+                <a class="link" href="#">Cadastro</a><a class="link" href="#">Recuperar Senha</a>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
 </html>
