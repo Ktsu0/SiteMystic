@@ -23,12 +23,21 @@ body {
   overflow-x: hidden;
 }
 
+header {
+  width: 100vw;
+  height: 5vh;
+  background-color: var(--secondary-color);
+  box-shadow: 1px 6px 16px 1px rgba(0, 0, 0, 0.87);
+  -webkit-box-shadow: 1px 6px 16px 1px rgba(0, 0, 0, 0.87);
+  -moz-box-shadow: 1px 6px 16px 1px rgba(0, 0, 0, 0.87);
+}
+
 /* ============================= */
 /*   MENU SUSPENSO (CANTO DIR)  */
 /* ============================= */
 #menu_suspenso {
   position: fixed;
-  top: 3vh;
+  top: 6vh;
   right: 0vw;
   width: 7vh;
   height: auto;
@@ -112,7 +121,8 @@ body {
 /* Caixa de login visível */
 #login_box.visivel {
   opacity: 1;
-  height: 30vh; /* Ajuste conforme necessário */
+  height: 30vh;
+  /* Ajuste conforme necessário */
   padding: 2vh 1vh;
   cursor: auto;
 }
@@ -127,7 +137,7 @@ body {
 /* ============================= */
 /*        INPUTS (LOGIN)        */
 /* ============================= */
-.input{
+.input {
   width: 80%;
   padding: 1vh;
   margin: 1vh;
@@ -142,9 +152,10 @@ body {
   position: relative;
   width: 100%;
 }
+
 /* Input da senha com espaço para o ícone */
-.password{
-    margin-left:3vh;
+.password {
+  margin-left: 3vh;
 }
 
 /* Ícone do olho (dentro do input) */
@@ -200,14 +211,15 @@ body {
   margin: 1vh;
 }
 
-.link{
-    color: var(--white);
-    text-decoration: underline;
-    padding: 1vh;
-    text-decoration: none;
+.link {
+  color: var(--white);
+  text-decoration: underline;
+  padding: 1vh;
+  text-decoration: none;
 }
-.link:hover{
-    transform: scale(1.05);
+
+.link:hover {
+  transform: scale(1.05);
 }
 
 
