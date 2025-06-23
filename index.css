@@ -1,3 +1,5 @@
+@import url(./menu_vert.css);
+
 /* ============================= */
 /*          VARIÁVEIS           */
 /* ============================= */
@@ -14,22 +16,105 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Cinzel', serif;
 }
 
 body {
-  background: var(--primary-color);
-  height: 100vh;
+  margin: 0;
   overflow-x: hidden;
+  overflow-y: auto;
+  height: 100vh;
+  width: 100vw;
+  background: var(--primary-color);
 }
 
+#background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+}
+
+/* ==== Header ==== */
 header {
   width: 100vw;
-  height: 5vh;
+  height: 8vh;
   background-color: var(--secondary-color);
-  box-shadow: 1px 6px 16px 1px rgba(0, 0, 0, 0.87);
-  -webkit-box-shadow: 1px 6px 16px 1px rgba(0, 0, 0, 0.87);
-  -moz-box-shadow: 1px 6px 16px 1px rgba(0, 0, 0, 0.87);
+  box-shadow: 0vw 0.4vh 1vh rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(0.8vh);
+  -webkit-backdrop-filter: blur(0.8vh);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+}
+
+/* ==== Menu ==== */
+.menu ul {
+  display: flex;
+  gap: 5vw;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  position: relative;
+  z-index: 1;
+}
+
+.menu a {
+  position: relative;
+  text-decoration: none;
+  color: var(--white);
+  font-size: 2vh;
+  letter-spacing: 0.2vw;
+  transition: all 0.4s ease-in-out;
+  backdrop-filter: blur(0.5vh);
+  -webkit-backdrop-filter: blur(0.5vh);
+}
+
+/* ==== Neblina nos botões ==== */
+.menu a {
+  filter: drop-shadow(0 0 0.5vh rgba(255, 255, 255, 0.5)) drop-shadow(0 0 1vh rgba(255, 255, 255, 0.3));
+}
+
+/* ==== Efeito de Subida + Linha ==== */
+.menu a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 0.3vh;
+  background-color: var(--primary-color);
+  bottom: -0.8vh;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease-in-out;
+}
+
+.menu a:hover {
+  transform: translateY(-1vh);
+  z-index: 5;
+  color: var(--primary-color);
+}
+
+.menu a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ==== Efeito de Z-Index subir acima da neblina ==== */
+.menu li:hover {
+  z-index: 20;
+}
+
+/* ==== Hover também remove neblina no fundo ==== */
+.menu li:hover a {
+  filter: none;
 }
 
 /* ============================= */
@@ -37,7 +122,7 @@ header {
 /* ============================= */
 #menu_suspenso {
   position: fixed;
-  top: 6vh;
+  top: 10vh;
   right: 0vw;
   width: 7vh;
   height: auto;

@@ -1,47 +1,89 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <title>Menu Suspenso</title>
-  <link rel="stylesheet" href="index.css">
+  <head>
+    <meta charset="UTF-8">
+    <title>Menu Suspenso</title>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <script src="btns.js"></script>
-</head>
-<body>
-  <!-- Menu Suspenso -->
-  <div id="menu_suspenso">
-    <div id="menu_icon" onclick="toggleMenu()">
+    <!-- Seu Script -->
+    <script type="module" src="btns.js"></script>
+    <script type="module" src="background.js"></script>
+    <script src="./menu_vert/menu_vert.js" defer></script>
+  </head>
+  <body>
+    <div id="background"></div>
+
+    <!-- Menu Suspenso -->
+    <div id="menu_suspenso">
+      <div id="menu_icon" onclick="toggleMenu()">
         <img class="icon" src="./../assets/tarot.png">
-    </div>
-    <div id="mensagem_agendar" onclick="abrirLogin()">
+      </div>
+      <div id="mensagem_agendar" onclick="abrirLogin()">
         Quer agendar uma consulta?
         <div id="login_box">
-            <p class="textConfig">FAÇA SEU LOGIN OU CADASTRE-SE</p>
-            <input class="input" type="email" placeholder="E-mail">
-            <div class="senha-container">
-                <input class="input password" type="password" id="senha_input" placeholder="Senha">
-                <i class="fa-solid fa-eye" id="toggle_senha" onclick="alternarSenha()"></i>
-            </div>
-            <div class="botoes_login">
-                 <button id="btn_entrar">ENTRAR</button>
-            </div>
-            <div class="links">
-                <a class="link" href="#">Cadastro</a><a class="link" href="#">Recuperar Senha</a>
-            </div>
+          <p class="textConfig">FAÇA SEU LOGIN OU CADASTRE-SE</p>
+          <input class="input" type="email" placeholder="E-mail">
+          <div class="senha-container">
+            <input class="input password" type="password" id="senha_input"
+              placeholder="Senha">
+            <i class="fa-solid fa-eye" id="toggle_senha"
+              onclick="alternarSenha()"></i>
+          </div>
+          <div class="botoes_login">
+            <button id="btn_entrar">ENTRAR</button>
+          </div>
+          <div class="links">
+            <a class="link" href="#">Cadastro</a><a class="link"
+              href="#">Recuperar Senha</a>
+          </div>
         </div>
+      </div>
     </div>
-  </div>
-  <header>
 
-  </header>
-  <main>
+    <!-- Menu Lateral Esquerdo -->
+    <div id="menu_lateral">
+      <!-- Botão de abrir/fechar -->
+      <div id="menu_toggle">
+        <img id="menu_icon" src="./assets/config.png" alt="Abrir Menu">
+      </div>
 
-  </main>
-  <footer>
-    
-  </footer>
-  <script src="index.js"></script>
-</body>
+      <!-- Conteúdo do Menu -->
+      <div id="menu_conteudo">
+        <div class="perfil">
+          <img src="./assets/perfil.png" alt="Perfil">
+          <p>Seu Nome</p>
+        </div>
+
+        <ul>
+          <li id="btn_config">Configurações</li>
+          <li>Conta</li>
+          <li>Ajuda</li>
+          <li>Sair</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Header com Menu -->
+    <header>
+      <nav class="menu">
+        <ul>
+          <li><a href="#">Agendar Atendimento</a></li>
+          <li><a href="#">Perfil</a></li>
+          <li><a href="#">Numerologia</a></li>
+          <li><a href="#">Tirar a Sorte</a></li>
+          <li><a href="#">Astrologia</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+
+    </main>
+    <footer>
+
+    </footer>
+    <script src="index.js"></script>
+  </body>
 </html>
