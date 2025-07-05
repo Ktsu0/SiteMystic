@@ -1,0 +1,278 @@
+/* ============================= */
+/*     CONTAINER DO MENU        */
+/* ============================= */
+.box-menu {
+  position: absolute;
+  left: 10px;
+  top: 0.2%;
+  width: var(--menu-width);
+  height: var(--menu-width);
+  background: var(--secondary-color);
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 60px;
+  cursor: pointer;
+  transition: all 1s ease-in-out;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+/* Quando o menu está expandido */
+.box-menu.full-menu {
+  height: 55vh;
+}
+
+/* ============================= */
+/*   BOTÃO DE ABRIR/FECHAR MENU */
+/* ============================= */
+.wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--menu-width);
+  height: var(--menu-width);
+}
+
+.menu-toggle i {
+  font-size: 24px;
+  color: var(--text-color);
+  transition: opacity 0.4s ease-in-out;
+}
+.menu-toggle i.fade-out {
+  opacity: 0;
+}
+
+
+/* ============================= */
+/*         MENU EXPANDIDO       */
+/* ============================= */
+.menu_v {
+  position: relative;
+  left: -9999px;
+  transition: left 0.3s;
+}
+
+/* Quando o menu está expandido, traz os links para dentro */
+.full-menu .menu_v {
+  left: 0;
+}
+
+/* ============================= */
+/*          LINKS DO MENU       */
+/* ============================= */
+.menu_v a {
+  position: relative;
+  display: inline-block;
+  width: 180px;
+  height: 58px;
+  line-height: 58px;
+  color: var(--text-color);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.3s;
+}
+
+.menu_v  a:hover {
+  background: var(--primary-color);
+}
+
+.menu_v  a::after {
+  content: '';
+  position: absolute;
+  left: 57px;
+  top: 29px;
+  height: 0;
+  width: 3px;
+  background: var(--text-color);
+  transition: height 0.3s, top 0.3s;
+}
+
+/* Linha lateral do item ativo */
+.menu_v  a.active::after {
+  top: 30%;
+  left: 25%;
+  height: 4vh;
+}
+
+/* ============================= */
+/*         ÍCONES E TEXTO       */
+/* ============================= */
+.menu_v  a span {
+  opacity: 1;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu_v  a span.icon {
+  width: var(--menu-width);
+  text-align: center;
+  font-size: 3vh;
+  color: var(--text-color);
+  transform: scale(1.1);
+}
+
+.memenu_v nu a span.text {
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
+}
+
+.menu_v  a:hover span.text {
+  transform: translateX(5px);
+}
+
+/* ============================= */
+/* ANIMAÇÕES DE ENTRADA DOS LINKS */
+.menu_v  a:nth-child(1) span { transition-delay: 0.1s; }
+.menu_v  a:nth-child(2) span { transition-delay: 0.15s; }
+.menu_v  a:nth-child(3) span { transition-delay: 0.2s; }
+.menu_v  a:nth-child(4) span { transition-delay: 0.25s; }
+
+/* ============================= */
+/* RESPONSIVIDADE: até 1000px   */
+/* ============================= */
+@media (max-width: 1000px) {
+  :root {
+    --menu-width: 50px;
+  }
+
+  .box-menu {
+    left: 30px;
+    top: 30px;
+  }
+
+  .box-menu.full-menu {
+    height: 260px;
+  }
+
+  .menu_v  a {
+    width: 150px;
+    height: 50px;
+    line-height: 50px;
+  }
+
+  .menu_v  a::after {
+    left: 45px;
+    top: 25px;
+  }
+
+  .menu_v  a.active::after {
+    top: 17px;
+    height: 18px;
+  }
+
+  .menu_v  a span {
+    font-size: 13px;
+  }
+
+  .menu_v  a span.icon {
+    font-size: 16px;
+  }
+
+  .menu_v  a span.text {
+    margin-left: 20px;
+  }
+}
+
+/* ============================= */
+/* RESPONSIVIDADE: até 700px    */
+/* ============================= */
+@media (max-width: 700px) {
+  :root {
+    --menu-width: 45px;
+  }
+
+  .box-menu {
+    left: 20px;
+    top: 20px;
+  }
+
+  .box-menu.full-menu {
+    height: 240px;
+  }
+
+  .menu_v  a {
+    width: 140px;
+    height: 48px;
+    line-height: 48px;
+  }
+
+  .menu_v  a::after {
+    left: 40px;
+    top: 24px;
+  }
+
+  .menu_v  a.active::after {
+    top: 16px;
+    height: 16px;
+  }
+
+  .menu_v  a span {
+    font-size: 12px;
+  }
+
+  .menu_v  a span.icon {
+    font-size: 15px;
+  }
+
+  .menu_v  a span.text {
+    margin-left: 18px;
+  }
+
+  .menu-toggle img {
+    width: 36px;
+    height: 36px;
+    margin: 6px;
+  }
+}
+
+/* ============================= */
+/* RESPONSIVIDADE: até 480px    */
+/* ============================= */
+@media (max-width: 480px) {
+  :root {
+    --menu-width: 40px;
+  }
+
+  .box-menu {
+    left: 15px;
+    top: 15px;
+  }
+
+  .box-menu.full-menu {
+    height: 220px;
+  }
+
+  .menu_v  a {
+    width: 120px;
+    height: 44px;
+    line-height: 44px;
+  }
+
+  .menu_v  a::after {
+    left: 35px;
+    top: 22px;
+  }
+
+  .menu_v  a.active::after {
+    top: 14px;
+    height: 14px;
+  }
+
+  .menu_v  a span {
+    font-size: 11px;
+  }
+
+  .menu_v  a span.icon {
+    font-size: 14px;
+  }
+
+  .menu_v  a span.text {
+    margin-left: 15px;
+  }
+
+  .menu-toggle img {
+    width: 32px;
+    height: 32px;
+    margin: 4px;
+  }
+}

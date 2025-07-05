@@ -9,9 +9,10 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <!-- Seu Script -->
-    <script type="module" src="btns.js"></script>
-    <script type="module" src="background.js"></script>
-    <script src="./menu_vert/menu_vert.js" defer></script>
+    <script type="module" src="./btns.js"></script>
+    <script type="module" src="./background.js"></script>
+    <script type="module" src="./menu_vertical/menu_vert.js"></script>
+
   </head>
   <body>
     <div id="background"></div>
@@ -43,31 +44,27 @@
       </div>
     </div>
 
-    <!-- Menu Lateral Esquerdo -->
-    <div id="menu_lateral">
-      <!-- Botão de abrir/fechar -->
-      <div id="menu_toggle">
-        <img id="menu_icon" src="./assets/config.png" alt="Abrir Menu">
-      </div>
-
-      <!-- Conteúdo do Menu -->
-      <div id="menu_conteudo">
-        <div class="perfil">
-          <img src="./assets/perfil.png" alt="Perfil">
-          <p>Seu Nome</p>
-        </div>
-
-        <ul>
-          <li id="btn_config">Configurações</li>
-          <li>Conta</li>
-          <li>Ajuda</li>
-          <li>Sair</li>
-        </ul>
-      </div>
-    </div>
-
     <!-- Header com Menu -->
     <header>
+      <!-- Menu Opções -->
+      <div class="box-menu">
+        <div class="wrapper">
+          <div class="menu-toggle">
+            <i id="menu-icon" class="fa-solid fa-bars"></i>
+          </div>
+        </div>
+        <div class="menu_v">
+          <a href="#" class="active"><span
+              class="icon fa fa-user-circle"></span><span
+              class="text">Conta</span></a>
+          <a href="#"><span class="icon fa fa-cog"></span><span
+              class="text">Configurações</span></a>
+          <a href="#"><span class="icon fa fa-heart"></span><span
+              class="text">Favoritos</span></a>
+          <a href="#"><span class="icon fa fa-sign-out"></span><span
+              class="text">Sair</span></a>
+        </div>
+      </div>
       <nav class="menu">
         <ul>
           <li><a href="#">Agendar Atendimento</a></li>

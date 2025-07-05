@@ -8,8 +8,6 @@ class MysticalCards {
 		this.messageTitle = document.getElementById("message-title"); // Título da carta revelada
 		this.messageText = document.getElementById("message-text"); // Mensagem da carta revelada
 		this.reshuffleBtn = document.getElementById("reshuffle-btn"); // Botão para embaralhar novamente
-		this.canvas = document.getElementById("particle-canvas"); // Canvas para partículas
-		this.ctx = this.canvas.getContext("2d"); // Contexto 2D para desenho no canvas
 
 		// Dados das cartas
 		this.cards = [

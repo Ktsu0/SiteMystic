@@ -2,7 +2,6 @@
 @import url(./css/cards.css);
 @import url(./css/cardsBack.css);
 @import url(./css/cardsFront.css);
-@import url(./../footer.css);
 @import url(./css/header.css);
 @import url(./css/mensage.css);
 
@@ -12,13 +11,13 @@
 /* ============================= */
 :root {
 	--bg-color: #0d0b1a;
-	--primary-color: #9969ff;
-	--secondary-color: #ff69a1;
+	--primary-color: #d3a4c6;
+	--secondary-color: #6a007b;
 	--text-color: #ffffff;
 	--card-back: linear-gradient(45deg, #4a0e77, #650d6d);
 	--card-front: linear-gradient(135deg, #2b2f66, #1c1647);
 	--card-hover: #764ba2;
-	--green:rgb(11, 116, 11);
+	--green: rgb(11, 116, 11);
 }
 
 /* Reset básico */
@@ -35,16 +34,25 @@ body {
 	width: 100vw;
 	height: 100vh;
 	font-family: "Cormorant Garamond", serif;
-	background-color: var(--bg-color);
-	background-image: radial-gradient(circle, #1a1333 0%, #38325c 100%);
 	color: var(--text-color);
 	overflow-x: hidden;
 	overflow-y: auto;
 }
+
+#background {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: 0;
+	background: var(--primary-color);
+}
+
 /* ============================= */
 /*        ESTILO DO MAIN        */
 /* ============================= */
-main{
+main {
 	width: 100vw;
 	height: 60vh;
 	padding: 5vh 0 0 0;
@@ -134,4 +142,3 @@ canvas {
 		font-size: 0.8rem;
 	}
 }
-

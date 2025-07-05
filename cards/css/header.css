@@ -3,60 +3,79 @@
 /* ============================= */
 header {
   width: 100vw;
-	height: 20vh;
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
-	text-align: center;
-	position: relative;
-	z-index: 2;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.voltar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 6vh;
+  height: 6vh;
+  border: solid 1px var(--secondary-color);
+  border-radius: 100%;
+  background: transparent;
+}
+.voltar i{
+  color: var(--text-color);
+
 }
 
 h1 {
-	font-family: "Cinzel", serif;
-	font-size: 3rem;
-	margin-bottom: 0.5rem;
-	background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	text-shadow: 0 0 10px rgba(153, 105, 255, 0.3);
+  font-family: "Cinzel", serif;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  background: var(--secondary-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(153, 105, 255, 0.3);
 
-	position: relative;
-	/* Para o absolute funcionar dentro dele */
-	padding-left: 12vh;
-	/* Espaço para o ícone ficar à esquerda, ajuste se precisar */
-	display: inline-block;
-	/* Para ajustar ao conteúdo */
+  position: relative;
+  /* Para o absolute funcionar dentro dele */
+  padding-left: 12vh;
+  /* Espaço para o ícone ficar à esquerda, ajuste se precisar */
+  display: inline-block;
+  /* Para ajustar ao conteúdo */
 }
 
 .subtitle {
-	font-size: 1.2rem;
-	opacity: 0.8;
-	max-width: 600px;
-	margin: 0 auto;
+  font-size: 1.2rem;
+  opacity: 1;
+  font-weight: bold;
+  margin: 0 auto;
+  color: var(--secondary-color);
 }
 
 /* ============================= */
 /*            Animation          */
 /* ============================= */
 .mistic {
-  position: relative;  /* contexto para o absolute */
+  position: relative;
+  /* contexto para o absolute */
   width: 10vh;
   height: 10vh;
-  display: inline-block; /* para encaixar no texto */
-  vertical-align: middle; /* alinhar com o texto */
-  /* fundo transparente para não atrapalhar */
+  display: inline-block;
+  /* para encaixar no texto */
+  vertical-align: middle;
+  /* alinhar com o texto */
   background-color: transparent;
+  /* fundo transparente para não atrapalhar */
 }
 
 #magic-span {
   position: absolute;
-  top: 32%;                   
+  top: 32%;
   transform: translate(-50%, -50%);
-  width: 100%;         
+  width: 100%;
   height: 100%;
 
-  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  background: var(--secondary-color);
 
   -webkit-mask: url('./../../assets/witch.svg') center/contain no-repeat;
   mask: url('./../../assets/witch.svg') center/contain no-repeat;
@@ -72,10 +91,13 @@ h1 {
     opacity: 1;
     filter: drop-shadow(0 0 0px white);
   }
-  50%, 57% {
+
+  50%,
+  52% {
     opacity: 0.1;
     filter: drop-shadow(0 0 5px 2px white);
   }
+
   100% {
     opacity: 1;
     filter: drop-shadow(0 0 0px white);

@@ -14,10 +14,11 @@
 		<!-- Importa o arquivo de estilos personalizado -->
 		<link rel="stylesheet" href="cards.css">
 		<!-- JS Documentos importados -->
-		<script type="module" src="./../footer.js" defer></script>
+		<script type="module" src="./../background.js"></script>
 
 		<!--API Font Aweson-->
-        <script src="https://kit.fontawesome.com/8facf198d8.js" crossorigin="anonymous"></script>
+		<script src="https://kit.fontawesome.com/8facf198d8.js"
+			crossorigin="anonymous"></script>
 
 		<!-- Conexões antecipadas com o Google Fonts (melhora o desempenho ao carregar fontes) -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,10 +31,13 @@
 	</head>
 
 	<body>
-		<!-- Canvas onde partículas animadas serão desenhadas via JavaScript -->
-		<canvas id="particle-canvas"></canvas>
+		<div id="background">
+		</div>
 		<!-- Cabeçalho da página -->
-		<header>
+		<header class="headerCard">
+			<button class="voltar">
+				<i class="fa-solid fa-circle-left"></i>
+			</button>
 			<h1>
 				M<div class="mistic">
 					<span id="magic-span"></span>
@@ -59,7 +63,7 @@
 		</main>
 
 		<!-- Rodapé com possíveis ícones ou enfeites -->
-		<footer id="footer"></footer>
+		<footer></footer>
 		<script type="module" src="cards.js"></script>
 
 	</body>

@@ -1,12 +1,17 @@
-@import url(./menu_vert.css);
+@import url(./mysticBackground/mysticBackground.css);
+@import url(./menu_vertical/menu_vert.css);
+
 
 /* ============================= */
 /*          VARIÁVEIS           */
 /* ============================= */
 :root {
-  --white: white;
   --primary-color: #d3a4c6;
   --secondary-color: #6a007b;
+  --menu-width: 10vh;
+  --text-color: #ffffff;
+  --bg-color: #9969ff;
+  --bg-secon-color: #ff69a1;
 }
 
 /* ============================= */
@@ -69,7 +74,7 @@ header {
 .menu a {
   position: relative;
   text-decoration: none;
-  color: var(--white);
+  color: var(--text-color);
   font-size: 2vh;
   letter-spacing: 0.2vw;
   transition: all 0.4s ease-in-out;
@@ -125,9 +130,9 @@ header {
   top: 10vh;
   right: 0vw;
   width: 7vh;
-  height: auto;
+  height: 8vh;
   background-color: var(--secondary-color);
-  color: var(--white);
+  color: var(--text-color);
   border-radius: 5vh 0 0 5vh;
   padding: 1vh;
   transition: width 1s ease-in-out;
@@ -179,6 +184,7 @@ header {
   opacity: 0;
   transition: opacity 1s ease-in-out;
   font-size: 2vh;
+  color: var(--text-color);
 }
 
 /* ============================= */
@@ -271,7 +277,7 @@ header {
   padding: 1vh 3vw;
   background-color: #a76ebf;
   border: none;
-  color: var(--white);
+  color: var(--text-color);
   border-radius: 1vh;
   cursor: pointer;
   font-size: 1.5vh;
@@ -282,14 +288,16 @@ header {
   color: rgba(230, 228, 228, 0.589);
   background-color: #a76ebf65;
 }
-
+#btn_entrar{
+  color: var(--text-color);
+}
 /* ============================= */
 /*     LINKS: Cadastro / Senha  */
 /* ============================= */
 .links {
   width: 100%;
   font-size: 1.5vh;
-  color: var(--white);
+  color: var(--text-color);
   text-align: center;
   display: flex;
   justify-content: space-around;
@@ -297,7 +305,7 @@ header {
 }
 
 .link {
-  color: var(--white);
+  color: var(--text-color);
   text-decoration: underline;
   padding: 1vh;
   text-decoration: none;

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Configurações do Perfil</title>
+  <script type="module" src="./conta.js"></script>
+  <link rel="stylesheet" href="./conta.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="./../mysticBackground/mysticBackground.css">
+  <script type="module" src="./../mysticBackground/mysticBackground.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="profile-header">
+      <div id="mystic-bg"></div>
+      <div class="avatar-wrapper">
+        <div class="avatar-box">
+          <img id="avatar" class="avatar hidden" src="" alt="Avatar" />
+
+          <button class="avatar-icon edit-icon" id="editBtn" onclick="document.getElementById('avatarInput').click()">
+            <i class="fas fa-pencil-alt"></i>
+          </button>
+
+          <button class="avatar-icon delete-icon" id="deleteBtn" onclick="removeAvatar()">
+            <i class="fas fa-trash-alt"></i>
+          </button>
+
+          <input type="file" id="avatarInput" accept="image/*" hidden />
+
+          <div class="avatar-placeholder" id="avatarPlaceholder"
+            onclick="document.getElementById('avatarInput').click()">
+            <i class="fas fa-plus"></i>
+          </div>
+        </div>
+        <div class="user-info">
+          <div class="name">
+            <h2 id="username"></h2>
+          </div>
+          <div class="info">
+            <div class="information">
+              <h5 class="text_info">Signo:</h5>
+              <div id="userZodiac" class="text_info zodiac-sign"></div>
+            </div>
+            <div class="information">
+              <h5 class="text_info">E-mail:</h5>
+              <a id="userEmail" class="text_info email" href="#"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tabs">
+      <div class="tab active" onclick="switchTab(0)">
+        Informações do Usuário
+      </div>
+      <div class="tab" onclick="switchTab(1)">Alterar Senha</div>
+    </div>
+
+    <div class="tab-content active" id="infoTab">
+      <div class="form-group">
+        <label>Name</label>
+        <input type="email" id="name" placeholder="Seu Nome" readonly />
+        <button class="btn end" onclick="enableEdit('name')">Alterar</button>
+      </div>
+      <div class="form-group">
+        <label>E-mail</label>
+        <input type="email" id="email" placeholder="Seu E-mail" readonly />
+        <button class="btn end" onclick="enableEdit('email')">Alterar</button>
+      </div>
+      <div class="form-group">
+        <label>Data de Nascimento</label>
+        <input type="date" id="birthdate" placeholder="Sua Data de Nascimento" readonly />
+        <button class="btn end" onclick="enableEdit('birthdate')">Alterar</button>
+      </div>
+      <button class="btn" onclick="saveUserInfo()">✓ Salvar</button>
+    </div>
+
+    <div class="tab-content" id="passwordTab">
+      <div class="form-group">
+        <label>Nova Senha</label>
+        <input type="password" id="password" placeholder="Digite a nova senha" />
+      </div>
+      <div class="form-group">
+        <label>Repetir Senha</label>
+        <input type="password" id="passwordRepeat" placeholder="Confirmar a nova senha" />
+      </div>
+      <button class="btn" onclick="updatePassword()">✓ Salvar</button>
+    </div>
+  </div>
+</body>
+
+</html>
